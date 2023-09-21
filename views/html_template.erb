@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>:::<%= title %>:::</title>
+  <style>
+    body{
+      max-width: 896px; 
+      margin: 0 auto; 
+      padding: 1em; 
+      text-align: justify; 
+      color: #f2f2f2; 
+      background-color: #222128; 
+      /* font-family: Monaco,Courier,monospace;  */
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.185rem; 
+      line-height: 1.45;
+    }
+    a {
+      color: #ccc;
+      padding:0.5rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/pages/i">home</a> |  
+    <a href="/pages/1">bread pudding</a> | 
+    <a href="/pages/2">banana bread</a> | 
+    <a href="/pages/3">chocolate chip cookies</a> |
+    <a href="/pages/if">if</a> |
+    <a href="/a">about</a> 
+  </nav>
+  <h1><%= title %></h1>
+  <div>
+    <%= content %>
+  </div>
+</body>
+</html>
+
