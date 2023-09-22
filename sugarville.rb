@@ -4,9 +4,7 @@ require 'redcarpet'
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 
 get '/' do
-  # if !logged_in?
     redirect "pages/i"
-  # end
 end
 
 # Renedring pages from Markdown
