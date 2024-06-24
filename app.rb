@@ -48,12 +48,15 @@ require 'redcarpet'
 
 configure :production, :development do
   enable :logging
-  set :public_folder, 'public'
+  # set :public_folder, 'public'
+  set :public_folder, File.dirname(__FILE__) + '/public'
 end
 
 # Static files check route
 get '/images/*' do
-  send_file File.join(settings.public_folder, 'images', params[:splat].first)
+  file_path = File.join(settings.public_folder, 'images', params[:splat].first)
+  puts "Trying to serve file: #{file_path}" 
+  send_file file_path
 end
 
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
@@ -86,6 +89,11 @@ get '/a' do
   <p style="color: grey">Ruby + Sinatra</p>
   '
   erb :html_template, locals: { title: 'About', content: content }
+end
+
+# Debugging route for checking static file serving
+get '/debug' do
+  "Public folder: #{settings.public_folder}"
 end
 
 # Development
