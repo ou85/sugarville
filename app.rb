@@ -48,7 +48,7 @@ require 'redcarpet'
 
 configure :production, :development do
   enable :logging
-  set :public_folder, File.dirname(__FILE__) + '/public'
+  set :public_folder, 'public'
 end
 
 # Static files check route
