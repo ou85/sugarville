@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'redcarpet'
 
+configure :production, :development do
+  enable :logging
+end
+
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 
 get '/' do
