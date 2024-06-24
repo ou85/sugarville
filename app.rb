@@ -51,7 +51,7 @@ configure :production, :development do
   set :public_folder, File.dirname(__FILE__) + '/public'
 end
 
-# Маршрут для проверки статических файлов
+# Static files check route
 get '/images/*' do
   send_file File.join(settings.public_folder, 'images', params[:splat].first)
 end
