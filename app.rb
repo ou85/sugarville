@@ -48,9 +48,11 @@ require 'redcarpet'
 
 configure :production, :development do
   enable :logging
-  # set :public_folder, 'public'
-  set :public_folder, File.expand_path('../public', __FILE__)
+  set :root, File.dirname(__FILE__)
+  set :public_folder, File.join(settings.root, 'public')
 end
+
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 
 # Static files check route
 get '/images/*' do
@@ -59,11 +61,15 @@ get '/images/*' do
   send_file file_path
 end
 
-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+# Debugging route for checking static file serving
+get '/debug' do
+  "Public folder: #{settings.public_folder}"
+end
 
 get '/' do
   redirect "pages/i"
 end
+
 
 # Rendering pages from Markdown
 content = ['i', '1', '2', '3']
@@ -91,10 +97,7 @@ get '/a' do
   erb :html_template, locals: { title: 'About', content: content }
 end
 
-# Debugging route for checking static file serving
-get '/debug' do
-  "Public folder: #{settings.public_folder}"
-end
+
 
 # Development
 set :bind, 'localhost'
