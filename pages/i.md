@@ -5,8 +5,7 @@ date: 2020-01-02
 
 ***Itätuulenkuja 97***
 
-<!-- ![Best Ever Chocolate Quinoa Cake!](/images/i-cake.jpg "The Best Ever Chocolate Quinoa Cake") -->
-![Best Ever Chocolate Quinoa Cake!](/public/images/i-cake.jpg "The Best Ever Chocolate Quinoa Cake")
+![Best Ever Chocolate Quinoa Cake!](/images/i-cake.jpg "The Best Ever Chocolate Quinoa Cake")
 
 Once upon a time in the quirky town of Sugarville, there lived a baker named Max who had a peculiar problem: every cake he baked seemed to defy gravity. It all began when Max experimented with a new cake recipe that called for "extra lift." Not one to shy away from adventure, he followed the instructions diligently, but little did he know that the cake would take the term "rising" to a whole new level.
 

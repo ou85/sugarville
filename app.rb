@@ -3,6 +3,7 @@ require 'redcarpet'
 
 configure :production, :development do
   enable :logging
+  set :public_folder, File.dirname(__FILE__) + '/public'
 end
 
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
