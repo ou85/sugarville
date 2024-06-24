@@ -15,7 +15,8 @@ end
 content = ['i', '1', '2', '3'] 
 content.each do |item| 
   get "/pages/#{item}" do
-    markdown_text = File.read("pages/#{item}.md")
+    # markdown_text = File.read("pages/#{item}.md")
+    markdown_text = File.read("pages/#{item}.md", encoding: 'utf-8')
     title = markdown_text.match(/^title: (.+)/) ? $1 : ''     # Получаем заголовок страницы
     markdown_text = markdown_text.gsub(/^---(.+?)---/m, '')   # Удаляем строки, начинающиеся с ---
     content = markdown.render(markdown_text)
